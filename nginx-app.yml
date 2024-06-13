@@ -15,6 +15,6 @@ spec:
         app: nginx-app
     spec:
       containers:
-      - image: nginx
+      - image: sathurjan/harness-demo
         imagePullPolicy: Always
         name: nginx
