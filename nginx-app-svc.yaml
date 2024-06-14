@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-app
+  name: nginx-app
+
+spec:
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+      - image: sathurjan/harness-demo
+        imagePullPolicy: Always
+        name: nginx
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx-app
+  name: nginx-app
+
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-app
+  type: LoadBalancer
+  
