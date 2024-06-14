@@ -19,6 +19,7 @@ spec:
         imagePullPolicy: Always
         name: nginx
 
+---
 apiVersion: v1
 kind: Service
 metadata:
